@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -38,6 +39,12 @@ const Login = () => {
 
     return (
         <>
+
+        <Helmet>
+            <title>
+                Voxly | login
+            </title>
+        </Helmet>
             <div
                 className="min-h-screen mt-10 mb-10 rounded-lg flex items-center justify-center"
                 style={{ backgroundImage: 'url("https://i.ibb.co/RPSNYMy/22541.jpg")', backgroundSize: 'cover' }}

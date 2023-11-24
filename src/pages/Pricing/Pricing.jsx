@@ -1,8 +1,15 @@
+import { Helmet } from "react-helmet-async";
 
 
 const Pricing = () => {
     return (
         <>
+
+            <Helmet>
+                <title>
+                    Voxly | Pricing
+                </title>
+            </Helmet>
             <div className="flex my-10 items-center justify-center bg-[#3F2E3E]">
                 {/* <!-- Button 1 --> */}
                 <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">

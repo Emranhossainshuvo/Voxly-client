@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -18,7 +19,7 @@ const Register = () => {
 
     // register user with email and password
     const handleCreateUser = e => {
-        e.preventDefault(); 
+        e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const photo = form.photo.value;
@@ -26,13 +27,13 @@ const Register = () => {
         const password = form.password.value;
         // const user = { name, photo, email, password };
         createUser(email, password)
-        .then(res => {
-            const user = res.user; 
-            console.log(user); 
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -54,6 +55,11 @@ const Register = () => {
                                 className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
                                 required
                             />
+                            <Helmet>
+                                <title>
+                                    Voxly | Sign up
+                                </title>
+                            </Helmet>
                         </div>
                         <div className="mb-4">
                             <label htmlFor="lastName" className="block text-[#F5E9CF] text-sm font-medium mb-2">
