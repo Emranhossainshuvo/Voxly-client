@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
 
     const navOptions = <>
-        <li className="bg-[#4D455D] rounded-s-2xl"><a>Item 1</a></li>
-        <li className="bg-[#4D455D]"><a>Item 2</a></li>
-        <li className="bg-[#4D455D] rounded-r-2xl"><a>Item 3</a></li>
+        <Link to="/"><li className="bg-[#4D455D] rounded-s-2xl"><a>Home</a></li></Link>
+        <Link to="/login"><li className="bg-[#4D455D]"><a>Login</a></li></Link>
+        <Link to="/register"><li className="bg-[#4D455D] rounded-r-2xl"><a>Register</a></li></Link>
+
     </>
 
     return (
@@ -20,7 +22,7 @@ const Navbar = () => {
                             {navOptions}
                         </ul>
                     </div>
-                    <a className="btn bg-[#E96479] hover:bg-[#e96478e8] btn-sm border-0 text-[#F5E9CF] text-xl">daisyUI</a>
+                    <img className="btn btn-ghost border-0 text-black text-xl" src="https://i.postimg.cc/pLXrRx1h/icons8-valorant-100-1.png" alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu h-12 menu-horizontal rounded-2xl text-[#F5E9CF]">

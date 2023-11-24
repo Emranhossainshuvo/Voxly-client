@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './howItWorks.css'
 
 const HowItWorks = () => {
@@ -59,7 +60,7 @@ const HowItWorks = () => {
 
                     <div className="cta">
                         <p>Ready to get started?</p>
-                        <a href="#sign-up" className="cta-button">Sign Up Now 🚀</a>
+                        <Link to="/register" className='cta-button'>Sign Up Now 🚀</Link>
                     </div>
                 </section>
             </div>
