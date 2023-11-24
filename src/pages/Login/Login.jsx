@@ -3,16 +3,34 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
 
-    const {googleSignIn} = useContext(AuthContext); 
+    const { googleSignIn, signIn } = useContext(AuthContext);
 
     const handleGoogleLogin = () => {
         googleSignIn()
-        .then(res => {
-            console.log(res)
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(res => {
+                console.log(res)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    // login user with email and password
+
+    const handleLoginUser = e => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        // const user = { name, photo, email, password };
+        signIn(email, password)
+            .then(res => {
+                const user = res.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     return (
@@ -23,7 +41,7 @@ const Login = () => {
             >
                 <div className="bg-black p-8 rounded shadow-md w-96 backdrop-blur-sm bg-opacity-20">
                     <h2 className="text-3xl text-[#F5E9CF] font-bold mb-6 text-center">Login</h2>
-                    <form>
+                    <form onSubmit={handleLoginUser}>
                         <div className="mb-4">
                             <label className="block text-[#F5E9CF]  text-sm font-medium mb-2">
                                 Email
@@ -56,7 +74,7 @@ const Login = () => {
                             Log In
                         </button>
                         <button
-                        onClick={handleGoogleLogin}
+                            onClick={handleGoogleLogin}
                             className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
                         >
                             Google
