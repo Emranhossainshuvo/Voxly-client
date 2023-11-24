@@ -2,11 +2,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const { googleSignIn, createUser } = useContext(AuthContext)
-    const axiosPublic = useAxiosPublic(); 
+    const { googleSignIn, createUser, updateUserProfile } = useContext(AuthContext)
+    const axiosPublic = useAxiosPublic();
 
     const handleGoogleLogin = () => {
         googleSignIn()
@@ -27,18 +28,36 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        const user = { name, photo, email, password };
+        // const user = { name, photo, email, password };
 
-        
+
 
         createUser(email, password)
             .then(res => {
                 const data = res.user;
                 console.log(data);
-                axiosPublic.post('/users', user)
-                .then(res => {
-                    console.log(res.data)
-                })
+                updateUserProfile(name, photo)
+                    .then(() => {
+                        const userInfo = {
+                            name,
+                            email, 
+                            photo
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if(res.data.insertedId){
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                }
+                                console.log(res.data)
+                            })
+                    })
+
             })
             .catch(error => {
                 console.log(error)
