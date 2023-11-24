@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Pricing from "../pages/Pricing/Pricing";
+import PrivateRoute from "./PrivateRoute";
 
   export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ import Pricing from "../pages/Pricing/Pricing";
             }, 
             {
               path: '/pricing', 
-              element: <Pricing></Pricing>
+              element: <PrivateRoute><Pricing></Pricing></PrivateRoute>
             }
       ]
     },
