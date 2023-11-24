@@ -1,15 +1,34 @@
 import { useContext } from "react";
-import { AuthContext } from "../../Providers/Provider";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
 
-    const {googleSignIn} = useContext(AuthContext)
+    const { googleSignIn, createUser } = useContext(AuthContext)
 
     const handleGoogleLogin = () => {
         googleSignIn()
+            .then(res => {
+                console.log(res);
+                // const user = res.data; 
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    // register user with email and password
+    const handleCreateUser = e => {
+        e.preventDefault(); 
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        // const user = { name, photo, email, password };
+        createUser(email, password)
         .then(res => {
-            console.log(res); 
-            // const user = res.data; 
+            const user = res.user; 
+            console.log(user); 
         })
         .catch(error => {
             console.log(error)
@@ -24,7 +43,7 @@ const Register = () => {
             >
                 <div className="bg-black p-8 rounded shadow-md w-96 backdrop-filter backdrop-blur-lg bg-opacity-10">
                     <h2 className="text-2xl font-semibold mb-6">Sign Up</h2>
-                    <form>
+                    <form onSubmit={handleCreateUser}>
                         <div className="mb-4">
                             <label htmlFor="firstName" className="block text-[#F5E9CF] text-sm font-medium mb-2">
                                 Name

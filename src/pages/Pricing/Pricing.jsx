@@ -3,7 +3,7 @@
 const Pricing = () => {
     return (
         <>
-            <div className="flex  items-center justify-center bg-[#000]">
+            <div className="flex my-10 items-center justify-center bg-[#3F2E3E]">
                 {/* <!-- Button 1 --> */}
                 <div className="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
                     <div className="mx-auto mb-8 max-w-screen-md  lg:mb-12 text-center">
