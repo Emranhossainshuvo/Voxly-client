@@ -1,5 +1,21 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/Provider";
 
 const Register = () => {
+
+    const {googleSignIn} = useContext(AuthContext)
+
+    const handleGoogleLogin = () => {
+        googleSignIn()
+        .then(res => {
+            console.log(res); 
+            // const user = res.data; 
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     return (
         <>
             <div
@@ -60,6 +76,11 @@ const Register = () => {
                             className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
                         >
                             Sign Up
+                        </button>
+                        <button onClick={handleGoogleLogin}
+                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                        >
+                            Google
                         </button>
                     </form>
                 </div>
