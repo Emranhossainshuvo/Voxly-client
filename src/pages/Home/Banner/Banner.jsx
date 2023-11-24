@@ -3,7 +3,7 @@ const Banner = () => {
     return (
         <>
             <div className="flex gap-5">
-                <div className="hero mt-10  rounded-lg max-w-6xl min-h-[500px]" style={{ backgroundImage: 'url(https://i.ibb.co/M8gwS23/19948929-6162910.jpg)' }}>
+                <div className="hero mt-10 rounded-lg max-w-6xl min-h-[500px]" style={{ backgroundImage: 'url(https://i.ibb.co/M8gwS23/19948929-6162910.jpg)' }}>
                     <div className="hero-overlay bg-opacity-20"></div>
                     <div className="hero-content text-center text-neutral-content">
                     </div>

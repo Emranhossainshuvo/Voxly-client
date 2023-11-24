@@ -6,7 +6,8 @@ const Navbar = () => {
     const navOptions = <>
         <Link to="/"><li className="bg-[#4D455D] rounded-s-2xl"><a>Home</a></li></Link>
         <Link to="/login"><li className="bg-[#4D455D]"><a>Login</a></li></Link>
-        <Link to="/register"><li className="bg-[#4D455D] rounded-r-2xl"><a>Register</a></li></Link>
+        <Link to="/register"><li className="bg-[#4D455D] "><a>Register</a></li></Link>
+        <Link to="/pricing"><li className="bg-[#4D455D] rounded-r-2xl"><a>Pricing</a></li></Link>
 
     </>
 
