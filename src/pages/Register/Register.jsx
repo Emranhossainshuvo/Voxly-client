@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Register = () => {
 
     const { googleSignIn, createUser } = useContext(AuthContext)
+    const axiosPublic = useAxiosPublic(); 
 
     const handleGoogleLogin = () => {
         googleSignIn()
@@ -25,11 +27,18 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        // const user = { name, photo, email, password };
+        const user = { name, photo, email, password };
+
+        
+
         createUser(email, password)
             .then(res => {
-                const user = res.user;
-                console.log(user);
+                const data = res.user;
+                console.log(data);
+                axiosPublic.post('/users', user)
+                .then(res => {
+                    console.log(res.data)
+                })
             })
             .catch(error => {
                 console.log(error)
