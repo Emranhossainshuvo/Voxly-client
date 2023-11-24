@@ -1,12 +1,13 @@
 import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from "react-accessible-accordion";
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 
 const Faq = () => {
     return (
         <>
-            <div className="bg-[#7DB9B6] my-10 text-[#F5E9CF]">
+            <div className="  rounded-lg ps-3 my-10 ">
                 <Accordion>
-                    <AccordionItem className="bg-[#E96479]">
+                    <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
                             How do I create a survey?
@@ -17,8 +18,8 @@ const Faq = () => {
                             To create a survey, log in to your account and click on the Create Survey button. Follow the step-by-step instructions to customize your questions and settings.
                             </p>
                         </AccordionItemPanel>
-                    </AccordionItem>
-                    <AccordionItem className="bg-[#E96479]">
+                    </AccordionItem> 
+                    <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
                             Is my data secure?
@@ -30,7 +31,7 @@ const Faq = () => {
                             </p>
                         </AccordionItemPanel>
                     </AccordionItem>
-                    <AccordionItem className="bg-[#E96479]">
+                    <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
                             Can I customize the look of my surveys?
@@ -42,7 +43,7 @@ const Faq = () => {
                             </p>
                         </AccordionItemPanel>
                     </AccordionItem>
-                    <AccordionItem className="bg-[#E96479]">
+                    <AccordionItem>
                         <AccordionItemHeading>
                             <AccordionItemButton>
                             How do I collect payments for surveys?
