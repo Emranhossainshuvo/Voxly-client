@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (<>
-        <footer className="footer p-10 text-base-content">
+        <footer className="footer p-10 bg-[#4D455D] text-base-content">
             <aside>
                 <div className="flex">
                     <img className="text-[#F5E9CF]" src="https://i.ibb.co/MRrQKbC/icons8-v-100.png" alt="" />
