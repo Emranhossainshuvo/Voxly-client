@@ -5,6 +5,8 @@
   max-width: 1200px; /* Expanded width */
   margin: 0 auto;
   padding: 40px 20px;
+  font-weight: bold;
+  color: black;
   background: linear-gradient(
     to right,
     #7DB9B6,
