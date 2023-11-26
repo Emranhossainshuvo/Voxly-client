@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const Login = () => {
 
@@ -12,7 +13,13 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleSignIn()
             .then(res => {
-                console.log(res)
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Social login added with Google",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
             .catch(error => {
                 console.log(error)
@@ -22,8 +29,13 @@ const Login = () => {
     const handleGithubLogin = () => {
         githubLogin()
             .then(res => {
-                const user = res.user; 
-                console.log(user);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Social login added with Github",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
             .catch(error => {
                 console.log(error)
