@@ -126,12 +126,12 @@ const Register = () => {
                         </div>
                         <button
                             type="submit"
-                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#455a5d] focus:outline-none focus:shadow-outline-blue"
                         >
                             Sign Up
                         </button>
                         <button onClick={handleGoogleLogin}
-                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#5d4f45] focus:outline-none focus:shadow-outline-blue"
                         >
                             Google
                         </button>

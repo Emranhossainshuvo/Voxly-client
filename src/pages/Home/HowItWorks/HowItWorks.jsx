@@ -4,7 +4,7 @@ import './howItWorks.css'
 const HowItWorks = () => {
     return (
         <>
-            <div className="mt-10">
+            <div className="my-10">
                 <section className="how-it-works-section">
                     <h2>How It Works 🛠</h2>
 

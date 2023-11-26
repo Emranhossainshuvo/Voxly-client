@@ -54,7 +54,13 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+
+                        {
+                            user ?
+                             <img className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />
+                            : 
+                            <img className="w-16 h-16 rounded-full mr-2 " src="https://i.ibb.co/m98MvWN/icons8-user-90.png" alt="" />
+                        }
                 </div>
             </div>
         </>
