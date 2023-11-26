@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/"><li className="bg-[#4D455D] rounded-s-2xl"><a>Home</a></li></Link>
         {
             user ?
-                <Link to="/survey"><li className="bg-[#4D455D]"><a>Survey</a></li></Link> :
+                <Link to="/surveys"><li className="bg-[#4D455D]"><a>Survey</a></li></Link> :
                 <Link to="/login"><li className="bg-[#4D455D]"><a>Login</a></li></Link>
         }
 

@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Pricing from "../pages/Pricing/Pricing";
 import PrivateRoute from "./PrivateRoute";
+import SurveysPage from "../pages/Surveys/Surveys";
 
   export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ import PrivateRoute from "./PrivateRoute";
             {
               path: '/pricing', 
               element: <PrivateRoute><Pricing></Pricing></PrivateRoute>
+            }, 
+            {
+              path: '/surveys', 
+              element: <SurveysPage></SurveysPage>
             }
       ]
     },
