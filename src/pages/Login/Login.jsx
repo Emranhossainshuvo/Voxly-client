@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
-    const { googleSignIn, signIn } = useContext(AuthContext);
+    const { googleSignIn, signIn, githubLogin } = useContext(AuthContext);
 
     const location = useLocation();
 
@@ -13,6 +13,17 @@ const Login = () => {
         googleSignIn()
             .then(res => {
                 console.log(res)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(res => {
+                const user = res.user; 
+                console.log(user);
             })
             .catch(error => {
                 console.log(error)
@@ -88,6 +99,12 @@ const Login = () => {
                             className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
                         >
                             Google
+                        </button>
+                        <button
+                            onClick={handleGithubLogin}
+                            className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
+                        >
+                            Github
                         </button>
                     </form>
                 </div>
