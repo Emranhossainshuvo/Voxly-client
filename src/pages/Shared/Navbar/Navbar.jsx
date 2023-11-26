@@ -5,15 +5,15 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
 
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
 
     // logout the user 
 
     const handleLogOut = () => {
         logOut()
-            // .then(res => {
-            //     // console.log(res)
-            // })
+        // .then(res => {
+        //     // console.log(res)
+        // })
     }
 
     const navOptions = <>
@@ -55,12 +55,14 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
 
-                        {
-                            user ?
-                             <img className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />
-                            : 
+                    {
+                        user ?
+                            <>
+                                <img className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />
+                            </>
+                            :
                             <img className="w-16 h-16 rounded-full mr-2 " src="https://i.ibb.co/m98MvWN/icons8-user-90.png" alt="" />
-                        }
+                    }
                 </div>
             </div>
         </>

@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const { googleSignIn, createUser, updateUserProfile } = useContext(AuthContext)
+    const { googleSignIn, createUser, updateUserProfile, githubLogin } = useContext(AuthContext); 
     const axiosPublic = useAxiosPublic();
 
     const handleGoogleLogin = () => {
@@ -14,6 +14,16 @@ const Register = () => {
             .then(res => {
                 console.log(res);
                 // const user = res.data; 
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(res => {
+                const user = res.user; 
+                console.log(user);
             })
             .catch(error => {
                 console.log(error)
@@ -97,7 +107,6 @@ const Register = () => {
                                 type="text"
                                 name="photo"
                                 className="w-full border border-gray-300 px-3 py-2 rounded-md focus:outline-none focus:border-blue-500"
-                                required
                             />
                         </div>
                         <div className="mb-4">
@@ -134,6 +143,11 @@ const Register = () => {
                             className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#5d4f45] focus:outline-none focus:shadow-outline-blue"
                         >
                             Google
+                        </button>
+                        <button onClick={handleGithubLogin}
+                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#5d4f45] focus:outline-none focus:shadow-outline-blue"
+                        >
+                            Github
                         </button>
                     </form>
                 </div>
