@@ -1,78 +1,66 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ManageSurvey = () => {
-  // Sample survey data, replace it with your actual data
-  const surveyData = [
-    { id: 1, title: 'Survey 1', questions: 10 },
-    { id: 2, title: 'Survey 2', questions: 15 },
-    // Add more survey objects as needed
-  ];
+  const [surveyData, setSurveyData ] = useState([]); 
 
-  // State to track selected surveys for deletion or update
   const [selectedSurveys, setSelectedSurveys] = useState([]);
 
-  // Function to handle checkbox changes
+
+  useEffect(() => {
+    fetch('http://localhost:5000/surveys')
+      .then((res) => res.json())
+      .then((data) => {
+        setSurveyData(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching surveys:', error);
+      });
+  }, []);
+
+
   const handleCheckboxChange = (surveyId) => {
     const isSelected = selectedSurveys.includes(surveyId);
 
     if (isSelected) {
-      // Remove survey from selectedSurveys if it's already selected
       setSelectedSurveys(selectedSurveys.filter(id => id !== surveyId));
     } else {
-      // Add survey to selectedSurveys if it's not selected
       setSelectedSurveys([...selectedSurveys, surveyId]);
     }
   };
 
-  // Function to handle delete action
   const handleDelete = () => {
-    // Implement logic to delete selected surveys
     console.log('Delete surveys:', selectedSurveys);
   };
 
-  // Function to handle update action
   const handleUpdate = () => {
-    // Implement logic to update selected surveys
     console.log('Update surveys:', selectedSurveys);
   };
 
   return (
-    <div>
-      <h2>Manage Surveys</h2>
-      <table>
+    <div className="container mx-auto mt-8">
+      <h2 className="text-2xl font-bold mb-4">Manage Surveys</h2>
+
+      <table className="w-full border">
         <thead>
           <tr>
-            <th>Select</th>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Questions</th>
+            <th className="border p-2">ID</th>
+            <th className="border p-2">Title</th>
+            <th className="border p-2">Questions</th>
           </tr>
         </thead>
         <tbody>
-          {surveyData.map(survey => (
+          {surveyData.map((survey, index) => (
             <tr key={survey.id}>
-              <td>
-                <input
-                  type="checkbox"
-                  onChange={() => handleCheckboxChange(survey.id)}
-                  checked={selectedSurveys.includes(survey.id)}
-                />
-              </td>
-              <td>{survey.id}</td>
-              <td>{survey.title}</td>
-              <td>{survey.questions}</td>
+              <td className="border p-2">{index + 1}</td>
+              <td className="border p-2">{survey.title}</td>
+              <td className="border p-2"><span className='btn btn-sm btn-neutral'>Delete</span> <span className='btn btn-sm btn-neutral'>Update</span></td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <div>
-        <button onClick={handleDelete} disabled={selectedSurveys.length === 0}>
-          Delete Selected
-        </button>
-        <button onClick={handleUpdate} disabled={selectedSurveys.length !== 1}>
-          Update Selected
-        </button>
+      <div className="mt-4">
+       
       </div>
     </div>
   );

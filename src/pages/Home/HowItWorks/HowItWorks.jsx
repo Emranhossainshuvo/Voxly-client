@@ -5,55 +5,55 @@ const HowItWorks = () => {
     return (
         <>
             <div className="my-10 mx-4">
-                <section className="max-w-1200 mx-auto px-20 py-40 font-bold text-black bg-gradient-to-r from-teal-500 to-red-500 rounded-2xl">
+                <section className="max-w-6xl mx-auto px-10 py-10 font-bold text-black bg-gradient-to-r from-teal-500 to-red-500 rounded-2xl">
                     <h2>How It Works 🛠</h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">1.</span>
+                            <span className="text-2xl mr-5">1.</span>
                             <div className='text-[#F5E9CF]'>
-                                <h3>Create Your Survey or Poll</h3>
-                                <p>Start by creating your survey or poll. Add up to six questions with multiple-choice answers, open-ended responses, or a combination of both.</p>
+                                <h3 className='text-black'>Create Your Survey or Poll</h3>
+                                <p className='mb-4'>Start by creating your survey or poll. Add up to six questions with multiple-choice answers, open-ended responses, or a combination of both.</p>
                             </div>
                         </div>
 
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">2.</span>
+                            <span  className="text-2xl mr-5">2.</span>
                             <div className='text-[#F5E9CF]'>
-                                <h3>Design and Personalize</h3>
-                                <p>Make your survey visually appealing. Customize the appearance with themes, colors, and branding to create a unique and engaging experience for your audience.</p>
+                                <h3 className='text-black'>Design and Personalize</h3>
+                                <p className='mb-4'>Make your survey visually appealing. Customize the appearance with themes, colors, and branding to create a unique and engaging experience for your audience.</p>
                             </div>
                         </div>
 
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">3.</span>
+                            <span  className="text-2xl mr-5">3.</span>
                             <div className='text-[#F5E9CF]'>
-                                <h3>Target Your Audience</h3>
-                                <p>Distribute your survey to the right audience. Share it through email, social media, or embed it on your website to reach your target demographic.</p>
+                                <h3 className='text-black'>Target Your Audience</h3>
+                                <p className='mb-4'>Distribute your survey to the right audience. Share it through email, social media, or embed it on your website to reach your target demographic.</p>
                             </div>
                         </div>
 
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">4.</span>
+                            <span  className="text-2xl mr-5">4.</span>
                             <div className='text-[#F5E9CF]'>
-                                <h3>Secure Payment Integration</h3>
-                                <p>Unlock premium features with our secure payment integration. Choose from flexible payment options to enhance your survey experience.</p>
+                                <h3 className='text-black'>Secure Payment Integration</h3>
+                                <p className='mb-4'>Unlock premium features with our secure payment integration. Choose from flexible payment options to enhance your survey experience.</p>
                             </div>
                         </div>
 
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">5.</span>
+                            <span  className="text-2xl mr-5">5.</span>
                             <div className='text-[#F5E9CF]'>
-                                <h3>User-Friendly Responses</h3>
-                                <p>Users can easily provide responses with a user-friendly interface. Capture valuable data and feedback through a streamlined response collection process.</p>
+                                <h3 className='text-black'>User-Friendly Responses</h3>
+                                <p className='mb-4'>Users can easily provide responses with a user-friendly interface. Capture valuable data and feedback through a streamlined response collection process.</p>
                             </div>
                         </div>
 
                         <div className="flex mb-30">
-                            <span className="text-2xl mr-20">6.</span>
-                            <div className='text-[#F5E9CF]'>
-                                <h3>Analytics and Reporting</h3>
-                                <p>Dive into detailed analytics and reports. Gain insights from the collected data to make informed decisions and optimize your strategies for better results.</p>
+                            <span  className="text-2xl mr-5">6.</span>
+                            <div className=' text-[#F5E9CF]'>
+                                <h3 className='text-black'>Analytics and Reporting</h3>
+                                <p className='mb-4'>Dive into detailed analytics and reports. Gain insights from the collected data to make informed decisions and optimize your strategies for better results.</p>
                             </div>
                         </div>
                     </div>

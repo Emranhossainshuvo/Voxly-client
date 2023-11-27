@@ -37,7 +37,7 @@ import ManageSurvey from "../pages/ManageSurveys/ManageSurveys";
             }, 
             {
               path: '/surveys', 
-              element: <SurveysPage></SurveysPage>
+              element:<PrivateRoute> <SurveysPage></SurveysPage></PrivateRoute>
             }, 
             {
               path: '/addsurvey', 
@@ -45,7 +45,7 @@ import ManageSurvey from "../pages/ManageSurveys/ManageSurveys";
             }, 
             {
               path: '/allusers', 
-              element: <AllUsers></AllUsers>
+              element: <PrivateRoute><AllUsers></AllUsers></PrivateRoute>
             }, 
             {
               path: '/managesurveys', 
