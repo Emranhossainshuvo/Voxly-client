@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SurveyForm = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [options, setOptions] = useState('Yes');
-  const [like, setLike] = useState(0);
-  const [dislike, setDislike] = useState(0);
-  const [category, setCategory] = useState('');
 
-  const handleLike = () => {
-    setLike(like + 1);
-  };
+  const axiosPublic = useAxiosPublic(); 
 
-  const handleDislike = () => {
-    setDislike(dislike + 1);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit =  async(e) => {
     e.preventDefault();
-    // Add your form submission logic here
+    const form = e.target; 
+    const title = form.title.value; 
+    const description = form.description.value; 
+    const category = form.category.value; 
+    const survey = {title, description, category}; 
+    // console.log(survey); 
+      const res = await axiosPublic.post('/surveys', survey)
+      console.log(res.data); 
   };
 
   return (
@@ -27,63 +22,27 @@ const SurveyForm = () => {
         Title:
         <input
           type="text"
+          name="title"
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+         
         />
       </label>
 
       <label className="block mb-2">
         Description:
         <textarea
+        name="description"
           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
         />
       </label>
 
       <label className="block mb-2">
-        Options:
-        <select
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-          value={options}
-          onChange={(e) => setOptions(e.target.value)}
-        >
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
+        Category:  
+        <select name="category">
+          <option value="Political affiliation">Political affiliation</option>
+          <option value="Voting behavior">Voting behavior</option>
+          <option value="Public policy opinions">Public policy opinions</option>
         </select>
-      </label>
-
-      <label className="block mb-2">
-        Like: {like}
-        <button
-          type="button"
-          className="ml-2 px-3 py-1 border rounded-md bg-green-500 text-white"
-          onClick={handleLike}
-        >
-          Like
-        </button>
-      </label>
-
-      <label className="block mb-2">
-        Dislike: {dislike}
-        <button
-          type="button"
-          className="ml-2 px-3 py-1 border rounded-md bg-red-500 text-white"
-          onClick={handleDislike}
-        >
-          Dislike
-        </button>
-      </label>
-
-      <label className="block mb-2">
-        Category:
-        <input
-          type="text"
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        />
       </label>
 
       <button
