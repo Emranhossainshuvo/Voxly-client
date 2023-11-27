@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
@@ -6,6 +6,12 @@ import { AuthContext } from "../../../Providers/AuthProvider";
 const Navbar = () => {
 
     const { user, logOut, loading } = useContext(AuthContext);
+    const [isNavbarOpen, setNavbarOpen] = useState(false);
+
+    const toggleUserDetail = () => {
+        setNavbarOpen(!isNavbarOpen);
+        console.log('her')
+      };
 
     // logout the user 
 
@@ -58,11 +64,37 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <img className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />
+                                <img onClick={toggleUserDetail} className="w-16 h-16 rounded-full mr-2" src={user?.photoURL} alt="" />
                             </>
                             :
                             <img className="w-16 h-16 rounded-full mr-2 " src="https://i.ibb.co/m98MvWN/icons8-user-90.png" alt="" />
                     }
+                    {isNavbarOpen && (
+        <div className="absolute top-24 right-0 bg-white border rounded shadow-md p-4">
+          <ul className="flex space-x-4">
+            <li>
+              <a href="#" className="text-gray-800 hover:text-blue-500">
+                Profile
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-800 hover:text-blue-500">
+                Users
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-800 hover:text-blue-500">
+                Orders
+              </a>
+            </li>
+            <li>
+              <a href="#" className="text-gray-800 hover:text-blue-500">
+                Order History
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
                 </div>
             </div>
         </>
