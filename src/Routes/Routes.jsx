@@ -9,6 +9,7 @@ import Register from "../pages/Register/Register";
 import Pricing from "../pages/Pricing/Pricing";
 import PrivateRoute from "./PrivateRoute";
 import SurveysPage from "../pages/Surveys/Surveys";
+import AddASurvey from "../pages/AddASurvey/AddASurvey";
 
   export const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ import SurveysPage from "../pages/Surveys/Surveys";
             {
               path: '/surveys', 
               element: <SurveysPage></SurveysPage>
+            }, 
+            {
+              path: '/addsurvey', 
+              element: <AddASurvey></AddASurvey>
             }
       ]
     },

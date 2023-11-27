@@ -72,11 +72,11 @@ const Navbar = () => {
                     {isNavbarOpen && (
         <div className="top-24 right-0 bg-white border rounded shadow-md p-4">
           <ul className="flex space-x-4">
-            <li>
-              <a href="#" className="text-gray-800 hover:text-blue-500">
-                Profile
-              </a>
+            
+            <Link to='/addsurvey'>
+            <li>Add survey
             </li>
+            </Link>
             <li>
               <a href="#" className="text-gray-800 hover:text-blue-500">
                 Users
