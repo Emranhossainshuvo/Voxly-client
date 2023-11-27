@@ -77,7 +77,7 @@ const Register = () => {
     return (
         <>
             <div
-                className="min-h-screen my-10 rounded-lg text-[#F5E9CF] flex items-center justify-center bg-cover bg-center"
+                className="min-h-[85vh] mx-4 my-10 rounded-lg text-[#F5E9CF] flex items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: 'url("https://i.ibb.co/VYcwFJy/8843-1.jpg")' }}
             >
                 <div className="bg-black p-8 rounded shadow-md w-96 backdrop-filter backdrop-blur-lg bg-opacity-10">

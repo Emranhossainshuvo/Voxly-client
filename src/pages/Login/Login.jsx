@@ -69,7 +69,7 @@ const Login = () => {
             </title>
         </Helmet>
             <div
-                className="min-h-screen mt-10 mb-10 rounded-lg flex items-center justify-center"
+                className="min-h-[85vh] mx-4 mt-10 mb-10 rounded-lg flex items-center justify-center"
                 style={{ backgroundImage: 'url("https://i.ibb.co/RPSNYMy/22541.jpg")', backgroundSize: 'cover' }}
             >
                 <div className="bg-black p-8 rounded shadow-md w-96 backdrop-blur-sm bg-opacity-20">

@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     const navOptions = <>
-        <Link to="/"><li className="bg-[#4D455D] rounded-s-2xl"><a>Home</a></li></Link>
+        <Link to="/"><li className="bg-[#4D455D] md:rounded-s-2xl"><a>Home</a></li></Link>
         {
             user ?
                 <Link to="/surveys"><li className="bg-[#4D455D]"><a>Survey</a></li></Link> :
@@ -30,7 +30,7 @@ const Navbar = () => {
                 :
                 <Link to='/register'><li className="bg-[#4D455D] "><a>Sign up</a></li></Link>
         }
-        <Link to="/pricing"><li className="bg-[#4D455D] rounded-r-2xl"><a>Pricing</a></li></Link>
+        <Link to="/pricing"><li className="bg-[#4D455D] md:rounded-r-2xl"><a>Pricing</a></li></Link>
 
     </>
 
