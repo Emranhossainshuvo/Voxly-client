@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const SurveyForm = () => {
@@ -14,7 +15,16 @@ const SurveyForm = () => {
     const survey = {title, description, category, photo}; 
     // console.log(survey); 
       const res = await axiosPublic.post('/surveys', survey)
-      console.log(res.data); 
+      // console.log(res.data); 
+      if(res.data.insertedId){
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Survey added",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
   };
 
   return (

@@ -4,7 +4,7 @@ const Banner = () => {
         <>
             <div className="md:flex mx-4 gap-5">
                 <div className="hero mt-10 bg-cover rounded-lg max-w-6xl min-h-[500px]" style={{ backgroundImage: 'url(https://i.ibb.co/M8gwS23/19948929-6162910.jpg)' }}>
-                    <div className="hero-overlay bg-opacity-20"></div>
+                    <div className="hero-overlay rounded-lg bg-opacity-20"></div>
                     <div className="hero-content text-center text-neutral-content">
                     </div>
                 </div>
