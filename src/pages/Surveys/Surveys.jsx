@@ -1,21 +1,20 @@
 
-import React from 'react';
+import{ useEffect, useState } from 'react';
+
 
 const SurveysPage = () => {
-  const surveys = [
-    {
-      id: 1,
-      title: 'Sample Survey 1',
-      description: 'This is a sample survey. Please participate!',
-      totalVoted: 100,
-    },
-    {
-      id: 2,
-      title: 'Sample Survey 2',
-      description: 'Another sample survey for you to check out.',
-      totalVoted: 75,
-    },
-  ];
+  // const axiosPublic = useAxiosPublic(); 
+
+  const [surveys, setSurveys] = useState([]); 
+
+  useEffect(() => {
+    fetch('http://localhost:5000/surveys')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+      setSurveys(data)
+    })
+  }, [])
 
   return (
     <div className="container mx-auto p-8">
