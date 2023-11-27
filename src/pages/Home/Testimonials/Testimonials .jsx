@@ -35,7 +35,7 @@ const Testimonials = () => {
 
     return (
         <section className="bg-gray-100 mt-10 rounded-xl py-12">
-            <div className="container mx-auto">
+            <div className="container px-4 mx-auto">
                 <h2 className="text-3xl font-bold mb-8">What Our Users Say</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonialsData.map((testimonial) => (
