@@ -79,11 +79,11 @@ const Navbar = () => {
             <li>Add survey
             </li>
             </Link>
+            <Link to="/allusers">
             <li>
-              <a href="#" className="text-gray-800 hover:text-blue-500">
-                Users
-              </a>
+              Users
             </li>
+            </Link>
             <li>
               <a href="#" className="text-gray-800 hover:text-blue-500">
                 Orders
