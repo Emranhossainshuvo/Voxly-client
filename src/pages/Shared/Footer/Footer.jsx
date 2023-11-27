@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (<>
-        <footer className="footer p-10 bg-[#4D455D] text-base-content">
+        <footer className="footer p-10  bg-[#4D455D] text-base-content">
             <aside>
                 <div className="flex">
                     <img className="text-[#F5E9CF]" src="https://i.ibb.co/MRrQKbC/icons8-v-100.png" alt="" />
@@ -9,7 +9,7 @@ const Footer = () => {
                 </div>
                 <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
             </aside>
-            <nav>
+            <nav className="justify-center">
                 <header className="footer-title text-[#F5E9CF]">Services</header>
                 <a className="link link-hover">Branding</a>
                 <a className="link link-hover">Design</a>
