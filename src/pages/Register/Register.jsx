@@ -3,6 +3,9 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
+import { VscGithubInverted } from "react-icons/vsc";
+import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Register = () => {
 
@@ -139,16 +142,23 @@ const Register = () => {
                         >
                             Sign Up
                         </button>
-                        <button onClick={handleGoogleLogin}
-                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#5d4f45] focus:outline-none focus:shadow-outline-blue"
+                        <div className="flex mt-5 justify-between text-white">
+                            <p>Have an account? <Link className="text-green-500 underline text-lg" to='/login'>login</Link></p>
+                        <div className="flex">
+                        <button
+                            onClick={handleGoogleLogin}
+                            className=" text-[#F5E9CF] py-2 px-4 rounded-md  focus:outline-none focus:bg-[#DC8686]"
                         >
-                            Google
+                            <FcGoogle></FcGoogle>
                         </button>
-                        <button onClick={handleGithubLogin}
-                            className="bg-[#4D455D] text-white px-4 py-2 rounded-md hover:bg-[#5d4f45] focus:outline-none focus:shadow-outline-blue"
+                        <button
+                            onClick={handleGithubLogin}
+                            className="w-full text-[#F5E9CF] py-2 px-4 rounded-md focus:outline-none"
                         >
-                            Github
+                            <VscGithubInverted />
                         </button>
+                        </div>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -104,13 +104,13 @@ const Login = () => {
                         </div>
                         <button
                             type="submit"
-                            className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
+                            className="bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
                         >
                             Log In
                         </button>
 
                         <div className="flex mt-5 justify-between text-white">
-                            <p><Link to='/register'>Go to Register</Link></p>
+                            <p>New user? <Link className="text-green-500 underline" to='/register'>Register</Link></p>
                         <div className="flex">
                         <button
                             onClick={handleGoogleLogin}
