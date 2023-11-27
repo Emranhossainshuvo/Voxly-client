@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import SurveysPage from "../pages/Surveys/Surveys";
 import AddASurvey from "../pages/AddASurvey/AddASurvey";
 import AllUsers from "../pages/AllUsers/AllUsers";
+import ManageSurvey from "../pages/ManageSurveys/ManageSurveys";
 
   export const router = createBrowserRouter([
     {
@@ -43,8 +44,12 @@ import AllUsers from "../pages/AllUsers/AllUsers";
               element: <AddASurvey></AddASurvey>
             }, 
             {
-              path: 'allusers', 
+              path: '/allusers', 
               element: <AllUsers></AllUsers>
+            }, 
+            {
+              path: '/managesurveys', 
+              element: <ManageSurvey></ManageSurvey>
             }
       ]
     },

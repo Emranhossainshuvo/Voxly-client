@@ -38,7 +38,7 @@ const Navbar = () => {
             </li>
             <li>
               <a href="#" className="text-gray-800 hover:text-blue-500">
-                Orders
+               Orders
               </a>
             </li>
             <li>
