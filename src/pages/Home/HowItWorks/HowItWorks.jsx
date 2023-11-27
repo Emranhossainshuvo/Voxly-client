@@ -1,56 +1,56 @@
 import { Link } from 'react-router-dom';
-import './howItWorks.css'
+
 
 const HowItWorks = () => {
     return (
         <>
             <div className="my-10 mx-4">
-                <section className="how-it-works-section">
+                <section className="max-w-1200 mx-auto px-20 py-40 font-bold text-black bg-gradient-to-r from-teal-500 to-red-500 rounded-2xl">
                     <h2>How It Works 🛠</h2>
 
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-                        <div className="step">
-                            <span className="step-number">1.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">1.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>Create Your Survey or Poll</h3>
                                 <p>Start by creating your survey or poll. Add up to six questions with multiple-choice answers, open-ended responses, or a combination of both.</p>
                             </div>
                         </div>
 
-                        <div className="step">
-                            <span className="step-number">2.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">2.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>Design and Personalize</h3>
                                 <p>Make your survey visually appealing. Customize the appearance with themes, colors, and branding to create a unique and engaging experience for your audience.</p>
                             </div>
                         </div>
 
-                        <div className="step">
-                            <span className="step-number">3.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">3.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>Target Your Audience</h3>
                                 <p>Distribute your survey to the right audience. Share it through email, social media, or embed it on your website to reach your target demographic.</p>
                             </div>
                         </div>
 
-                        <div className="step">
-                            <span className="step-number">4.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">4.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>Secure Payment Integration</h3>
                                 <p>Unlock premium features with our secure payment integration. Choose from flexible payment options to enhance your survey experience.</p>
                             </div>
                         </div>
 
-                        <div className="step">
-                            <span className="step-number">5.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">5.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>User-Friendly Responses</h3>
                                 <p>Users can easily provide responses with a user-friendly interface. Capture valuable data and feedback through a streamlined response collection process.</p>
                             </div>
                         </div>
 
-                        <div className="step">
-                            <span className="step-number">6.</span>
+                        <div className="flex mb-30">
+                            <span className="text-2xl mr-20">6.</span>
                             <div className='text-[#F5E9CF]'>
                                 <h3>Analytics and Reporting</h3>
                                 <p>Dive into detailed analytics and reports. Gain insights from the collected data to make informed decisions and optimize your strategies for better results.</p>
@@ -58,9 +58,9 @@ const HowItWorks = () => {
                         </div>
                     </div>
 
-                    <div className="cta">
+                    <div className="text-center mt-10">
                         <p>Ready to get started?</p>
-                        <Link to="/register" className='cta-button'>Sign Up Now 🚀</Link>
+                        <Link to="/register" className='inline-block px-4 py-2 bg-purple-800 text-white no-underline rounded-md text-lg transition duration-300 ease-in-out hover:bg-purple-600'>Sign Up Now 🚀</Link>
                     </div>
                 </section>
             </div>
