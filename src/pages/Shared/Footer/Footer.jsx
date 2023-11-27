@@ -7,27 +7,27 @@ const Footer = () => {
                     <img className="text-[#F5E9CF]" src="https://i.ibb.co/MRrQKbC/icons8-v-100.png" alt="" />
                     <h2 className="text-4xl mt-10 font-bold  text-[#F5E9CF]">oxly</h2>
                 </div>
-                <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                <p className="text-[#F5E9CF]">ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
             </aside>
             <nav className="justify-center">
                 <header className="footer-title text-[#F5E9CF]">Services</header>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <a className="link text-[#F5E9CF] link-hover">Branding</a>
+                <a className="link text-[#F5E9CF] link-hover">Design</a>
+                <a className="link text-[#F5E9CF] link-hover">Marketing</a>
+                <a className="link text-[#F5E9CF] link-hover">Advertisement</a>
             </nav>
             <nav>
                 <header className="footer-title text-[#F5E9CF]">Company</header>
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Jobs</a>
-                <a className="link link-hover">Press kit</a>
+                <a className="link text-[#F5E9CF] link-hover">About us</a>
+                <a className="link text-[#F5E9CF] link-hover">Contact</a>
+                <a className="link text-[#F5E9CF] link-hover">Jobs</a>
+                <a className="link text-[#F5E9CF] link-hover">Press kit</a>
             </nav>
             <nav>
                 <header className="footer-title text-[#F5E9CF]">Legal</header>
-                <a className="link link-hover">Terms of use</a>
-                <a className="link link-hover">Privacy policy</a>
-                <a className="link link-hover">Cookie policy</a>
+                <a className="link text-[#F5E9CF] link-hover">Terms of use</a>
+                <a className="link text-[#F5E9CF] link-hover">Privacy policy</a>
+                <a className="link text-[#F5E9CF] link-hover">Cookie policy</a>
             </nav>
         </footer>
         <div>
