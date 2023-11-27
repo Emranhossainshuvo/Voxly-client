@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
+import { VscGithubInverted } from "react-icons/vsc";
 
 const Login = () => {
 
@@ -106,18 +108,24 @@ const Login = () => {
                         >
                             Log In
                         </button>
+
+                        <div className="flex mt-5 justify-between text-white">
+                            <p><Link to='/register'>Go to Register</Link></p>
+                        <div className="flex">
                         <button
                             onClick={handleGoogleLogin}
-                            className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
+                            className=" text-[#F5E9CF] py-2 px-4 rounded-md  focus:outline-none focus:bg-[#DC8686]"
                         >
-                            Google
+                            <FcGoogle></FcGoogle>
                         </button>
                         <button
                             onClick={handleGithubLogin}
-                            className="w-full bg-[#E96479] text-[#F5E9CF] py-2 px-4 rounded-md hover:bg-[#DC8686] focus:outline-none focus:bg-[#DC8686]"
+                            className="w-full text-[#F5E9CF] py-2 px-4 rounded-md focus:outline-none"
                         >
-                            Github
+                            <VscGithubInverted />
                         </button>
+                        </div>
+                        </div>
                     </form>
                 </div>
             </div>

@@ -70,7 +70,7 @@ const Navbar = () => {
                             <img className="w-16 h-16 rounded-full mr-2 " src="https://i.ibb.co/m98MvWN/icons8-user-90.png" alt="" />
                     }
                     {isNavbarOpen && (
-        <div className="absolute top-24 right-0 bg-white border rounded shadow-md p-4">
+        <div className="top-24 right-0 bg-white border rounded shadow-md p-4">
           <ul className="flex space-x-4">
             <li>
               <a href="#" className="text-gray-800 hover:text-blue-500">
