@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import './navbar.css'
 
 
 const Navbar = () => {
@@ -23,20 +24,21 @@ const Navbar = () => {
     }
 
     const navOptions = <>
-        <Link to="/"><li className="bg-[#4D455D] md:rounded-s-2xl"><a>Home</a></li></Link>
+        <NavLink to="/"><li className="bg-[#4D455D] text-[#DED0B6] md:rounded-s-2xl"><a>Home</a></li></NavLink>
         {
             user ?
-                <Link to="/surveys"><li className="bg-[#4D455D]"><a>Survey</a></li></Link> :
-                <Link to="/login"><li className="bg-[#4D455D]"><a>Login</a></li></Link>
+                <NavLink to="/surveys"><li className="bg-[#4D455D] text-[#DED0B6]"><a>Survey</a></li></NavLink> :
+                <NavLink to="/login"><li className="bg-[#4D455D] text-[#DED0B6]"><a>Login</a></li></NavLink>
         }
 
         {
             user ?
-                <li onClick={handleLogOut} className="bg-[#4D455D] "><a>Logout</a></li>
+                <li onClick={handleLogOut} className="bg-[#4D455D] text-[#DED0B6] "><a>Logout</a></li>
                 :
-                <Link to='/register'><li className="bg-[#4D455D] "><a>Sign up</a></li></Link>
+                <NavLink to='/register'><li className="bg-[#4D455D] text-[#DED0B6] "><a>Sign up</a></li>
+                </NavLink>
         }
-        <Link to="/pricing"><li className="bg-[#4D455D] md:rounded-r-2xl"><a>Pricing</a></li></Link>
+        <NavLink to="/pricing"><li className="bg-[#4D455D] text-[#DED0B6] md:rounded-r-2xl"><a>Pricing</a></li></NavLink>
 
     </>
 
