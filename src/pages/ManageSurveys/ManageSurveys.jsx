@@ -1,55 +1,56 @@
-import React, { useEffect, useState } from 'react';
+import{ useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const ManageSurvey = () => {
-  const [surveyData, setSurveyData ] = useState([]); 
+  const [surveyData, setSurveyData] = useState([]);
+  const axiosPublic = useAxiosPublic();
 
-  const axiosPublic = useAxiosPublic(); 
-
-  useEffect(() => {
-    fetch('http://localhost:5000/surveys')
-      .then((res) => res.json())
-      .then((data) => {
-        setSurveyData(data);
+  const fetchSurveys = () => {
+    axiosPublic.get('/surveys')
+      .then((res) => {
+        setSurveyData(res.data);
       })
       .catch((error) => {
         console.error('Error fetching surveys:', error);
       });
-  }, []);
+  };
 
+  useEffect(() => {
+    fetchSurveys();
+  }, []);
 
   const handleDeleteSurvey = (survey) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-
         axiosPublic.delete(`/surveys/${survey._id}`)
-        .then(res => {
-          console.log(res.data)
-        })
-
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success"
-        });
-        console.log('delete button clicked')
+          .then(() => {
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'Your file has been deleted.',
+              icon: 'success'
+            });
+            fetchSurveys();
+          })
+          .catch((error) => {
+            console.error('Error deleting survey:', error);
+          });
       }
     });
-  }
+  };
 
   const handleUpdateSurvey = () => {
-    console.log('update button clicked')
-  }
+    console.log('update button clicked');
+  };
 
   return (
     <div className="container mx-auto mt-8">
@@ -71,15 +72,16 @@ const ManageSurvey = () => {
             <tr key={survey.id}>
               <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{survey.title}</td>
-              <td className="border p-2"><span onClick={() => handleDeleteSurvey(survey)} className='btn btn-sm btn-neutral'>Delete</span> <span onClick={handleUpdateSurvey}  className='btn btn-sm btn-neutral'>Update</span></td>
+              <td className="border p-2">
+                <span onClick={() => handleDeleteSurvey(survey)} className='btn btn-sm btn-neutral'>Delete</span>
+                <span onClick={handleUpdateSurvey} className='btn btn-sm btn-neutral'>Update</span>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      <div className="mt-4">
-       
-      </div>
+      <div className="mt-4"></div>
     </div>
   );
 };
