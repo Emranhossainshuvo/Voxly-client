@@ -10,7 +10,7 @@ const Login = () => {
 
     const { googleSignIn, signIn, githubLogin } = useContext(AuthContext);
 
-    const location = useLocation();
+    // const location = useLocation();
 
     const handleGoogleLogin = () => {
         googleSignIn()

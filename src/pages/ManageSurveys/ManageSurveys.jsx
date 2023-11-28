@@ -48,9 +48,9 @@ const ManageSurvey = () => {
     });
   };
 
-  const handleUpdateSurvey = () => {
-    console.log('update button clicked');
-  };
+  // const handleUpdateSurvey = () => {
+  //   console.log('update button clicked');
+  // };
 
   return (
     <div className="container mx-auto mt-8">

@@ -11,7 +11,7 @@ const AllUsers = () => {
         const data = await response.json();
         setUsers(data);
       } catch (error) {
-        console.error('Error fetching user data:', error);
+        console.error( error); 
       }
     };
 
