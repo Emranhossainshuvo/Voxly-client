@@ -51,6 +51,7 @@ const SurveysPage = () => {
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                 {renderDescription(survey.description)}
               </p>
+              <button>
               <Link to="/surveysdetails">
               <a
                 href="#"
@@ -74,6 +75,7 @@ const SurveysPage = () => {
                 </svg>
               </a>
               </Link>
+              </button>
             </div>
           </div>
         ))}

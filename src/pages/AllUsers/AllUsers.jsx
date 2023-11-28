@@ -19,7 +19,7 @@ const AllUsers = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto mb-10 mt-8">
       <h1 className="text-2xl font-bold mb-4">User Table</h1>
       <table className="min-w-full border border-gray-300">
         <thead>

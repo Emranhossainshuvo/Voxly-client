@@ -1,8 +1,12 @@
+// import { useEffect, useState } from "react";
+// import { useLoaderData } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 const SurveysDetailsPage = () => {
 
     const [survers, setSurveys] = useState(); 
+    // const {title, desctiption, photo, _id} = useLoaderData(); 
 
     useEffect( () => {
         fetch('http://localhost:5000/surveys')
@@ -16,9 +20,10 @@ const SurveysDetailsPage = () => {
 
     return (
         <div>
-            {
+            <h2>hi: {survers.length}</h2>
+            {/* {
                 survers.map(surver => )
-            }
+            } */}
         </div>
     );
 };

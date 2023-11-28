@@ -53,8 +53,9 @@ import SurveysDetailsPage from "../pages/SurveysDetailsPage/SurveysDetailsPage";
               element: <ManageSurvey></ManageSurvey>
             }, 
             {
-              path: '/surveysdetails', 
-              element: <SurveysDetailsPage></SurveysDetailsPage>
+              path: '/surveysdetails/:id', 
+              element: <SurveysDetailsPage></SurveysDetailsPage>, 
+              loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
             }
       ]
     },
