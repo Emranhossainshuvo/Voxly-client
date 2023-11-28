@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -27,6 +28,9 @@ const AllUsers = () => {
             <th className="py-2 px-4 border">Name</th>
             <th className="py-2 px-4 border">Email</th>
           </tr>
+          <Helmet>
+            <title>Voxly | All users</title>
+          </Helmet>
         </thead>
         <tbody>
           {users.map((user, index) => (

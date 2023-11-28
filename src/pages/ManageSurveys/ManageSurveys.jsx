@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const ManageSurvey = () => {
   const [surveyData, setSurveyData ] = useState([]); 
@@ -48,6 +49,9 @@ const ManageSurvey = () => {
             <th className="border p-2">Questions</th>
           </tr>
         </thead>
+        <Helmet>
+          <title>Voxly | Manage surveys</title>
+        </Helmet>
         <tbody>
           {surveyData.map((survey, index) => (
             <tr key={survey.id}>

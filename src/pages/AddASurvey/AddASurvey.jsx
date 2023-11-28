@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { Helmet } from "react-helmet-async";
 
 const SurveyForm = () => {
 
@@ -29,6 +30,9 @@ const SurveyForm = () => {
 
   return (
     <form className="max-w-md mx-auto p-4 bg-gray-100 rounded-md shadow-md" onSubmit={handleSubmit}>
+      <Helmet>
+        <title>Voxly | Add survey</title>
+      </Helmet>
     <label className="block mb-2">
         Photo:
         <input

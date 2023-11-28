@@ -91,7 +91,7 @@ const Navbar = () => {
             </Link>
             <li>
               <a href="#" className="text-gray-800 hover:text-blue-500">
-                Order History
+                Manage users
               </a>
             </li>
           </ul>
