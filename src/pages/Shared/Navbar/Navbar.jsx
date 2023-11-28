@@ -9,6 +9,10 @@ const Navbar = () => {
     const { user, logOut, loading } = useContext(AuthContext);
     const [isNavbarOpen, setNavbarOpen] = useState(false);
 
+    const handleHide = () => {
+        setNavbarOpen(false); 
+    }
+
     const toggleUserDetail = () => {
     if(loading){
         return <span className="loading loading-spinner loading-lg"></span>;
@@ -76,7 +80,8 @@ const Navbar = () => {
                     }
                     {isNavbarOpen && (
         <div className="top-24 right-0 bg-white border rounded shadow-md p-4">
-          <ul className="flex space-x-4">
+          
+            <ul onClick={handleHide} className="flex space-x-4">
             
             <Link to='/addsurvey'>
             <li>Add survey
@@ -98,6 +103,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+          
         </div>
       )}
                 </div>
