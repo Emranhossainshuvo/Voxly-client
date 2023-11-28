@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const ManageSurvey = () => {
   const [surveyData, setSurveyData ] = useState([]); 
 
   const [selectedSurveys, setSelectedSurveys] = useState([]);
-
+  const axiosPublic = useAxiosPublic(); 
 
   useEffect(() => {
     fetch('http://localhost:5000/surveys')
@@ -19,23 +21,36 @@ const ManageSurvey = () => {
   }, []);
 
 
-  const handleCheckboxChange = (surveyId) => {
-    const isSelected = selectedSurveys.includes(surveyId);
+  const handleDeleteSurvey = (survey) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
 
-    if (isSelected) {
-      setSelectedSurveys(selectedSurveys.filter(id => id !== surveyId));
-    } else {
-      setSelectedSurveys([...selectedSurveys, surveyId]);
-    }
-  };
+        axiosPublic.delete(`/survey/${survey._id}`)
+        .then(res => {
+          console.log(res.data)
+        })
 
-  const handleDelete = () => {
-    console.log('Delete surveys:', selectedSurveys);
-  };
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+        console.log('delete button clicked')
+      }
+    });
+  }
 
-  const handleUpdate = () => {
-    console.log('Update surveys:', selectedSurveys);
-  };
+  const handleUpdateSurvey = () => {
+    console.log('update button clicked')
+  }
 
   return (
     <div className="container mx-auto mt-8">
@@ -57,7 +72,7 @@ const ManageSurvey = () => {
             <tr key={survey.id}>
               <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{survey.title}</td>
-              <td className="border p-2"><span className='btn btn-sm btn-neutral'>Delete</span> <span className='btn btn-sm btn-neutral'>Update</span></td>
+              <td className="border p-2"><span onClick={() => handleDeleteSurvey(survey)} className='btn btn-sm btn-neutral'>Delete</span> <span onClick={handleUpdateSurvey}  className='btn btn-sm btn-neutral'>Update</span></td>
             </tr>
           ))}
         </tbody>
