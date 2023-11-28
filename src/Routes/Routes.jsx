@@ -12,6 +12,7 @@ import SurveysPage from "../pages/Surveys/Surveys";
 import AddASurvey from "../pages/AddASurvey/AddASurvey";
 import AllUsers from "../pages/AllUsers/AllUsers";
 import ManageSurvey from "../pages/ManageSurveys/ManageSurveys";
+import SurveysDetailsPage from "../pages/SurveysDetailsPage/SurveysDetailsPage";
 
   export const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ import ManageSurvey from "../pages/ManageSurveys/ManageSurveys";
             {
               path: '/managesurveys', 
               element: <ManageSurvey></ManageSurvey>
+            }, 
+            {
+              path: '/surveysdetails', 
+              element: <SurveysDetailsPage></SurveysDetailsPage>
             }
       ]
     },
