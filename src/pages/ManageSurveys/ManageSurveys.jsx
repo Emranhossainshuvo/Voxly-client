@@ -6,7 +6,6 @@ import useAxiosPublic from '../../Hooks/useAxiosPublic';
 const ManageSurvey = () => {
   const [surveyData, setSurveyData ] = useState([]); 
 
-  const [selectedSurveys, setSelectedSurveys] = useState([]);
   const axiosPublic = useAxiosPublic(); 
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const ManageSurvey = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axiosPublic.delete(`/survey/${survey._id}`)
+        axiosPublic.delete(`/surveys/${survey._id}`)
         .then(res => {
           console.log(res.data)
         })
