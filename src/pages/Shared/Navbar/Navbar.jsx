@@ -10,8 +10,11 @@ const Navbar = () => {
     const [isNavbarOpen, setNavbarOpen] = useState(false);
 
     const toggleUserDetail = () => {
+    if(loading){
+        return <span className="loading loading-spinner loading-lg"></span>;
+    }
         setNavbarOpen(!isNavbarOpen);
-        console.log('her')
+        console.log(user.photoURL)
       };
 
     // logout the user 
