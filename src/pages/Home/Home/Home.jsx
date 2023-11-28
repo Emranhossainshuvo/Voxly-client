@@ -14,7 +14,7 @@ const Home = () => {
             <HowItWorks></HowItWorks>
             <Testimonials></Testimonials>
             <Faq></Faq>
-            <h2 className='text-3xl'>This is home</h2>
+            <h2 className='text-3xl font-sofia'>This is home</h2>
 
         </div>
     );
