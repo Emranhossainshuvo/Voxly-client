@@ -61,7 +61,7 @@ const ManageSurvey = () => {
           <tr>
             <th className="border p-2">ID</th>
             <th className="border p-2">Title</th>
-            <th className="border p-2">Questions</th>
+            <th className="border p-2">Actions</th>
           </tr>
         </thead>
         <Helmet>
@@ -73,8 +73,8 @@ const ManageSurvey = () => {
               <td className="border p-2">{index + 1}</td>
               <td className="border p-2">{survey.title}</td>
               <td className="border p-2">
-                <span onClick={() => handleDeleteSurvey(survey)} className='btn btn-sm btn-neutral'>Delete</span>
-                <span onClick={handleUpdateSurvey} className='btn btn-sm btn-neutral'>Update</span>
+                <span onClick={() => handleDeleteSurvey(survey)} className='btn btn-sm bg-[#4D455D] mx-auto flex max-w-[100px] btn-neutral'>Delete</span>
+                {/* <span onClick={handleUpdateSurvey} className='btn btn-sm btn-neutral'>Update</span> */}
               </td>
             </tr>
           ))}
