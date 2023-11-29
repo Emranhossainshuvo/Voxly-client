@@ -67,7 +67,16 @@ const AllUsers = () => {
       // console.log('user', user) 
       axiosPublic.patch(`users/admin/${user._id}`) 
       .then(res => {
-        console.log(res.data);
+        console.log(res.data); 
+        if(res.data.modifiedCount){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${user.name} is an admin now`,
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
       })
   }
 
@@ -94,8 +103,10 @@ const AllUsers = () => {
               <td className="py-2 px-4 border">{user.name}</td>
               <td className="py-2 px-4 border">{user.email}</td>
               <td className="py-2 flex justify-around px-4 border-t">
-              <FaRegTrashAlt className='cursor-pointer' onClick={() => handleDeleteUser(user)}/>
-              <MdAdminPanelSettings onClick={() => handleMakeAdmin(user)}></MdAdminPanelSettings>
+              { user ? 'Admin' :
+                <FaRegTrashAlt className='cursor-pointer' onClick={() => handleDeleteUser(user)}/>
+                }
+              <MdAdminPanelSettings className='cursor-pointer' onClick={() => handleMakeAdmin(user)}></MdAdminPanelSettings>
               </td>
             </tr>
           ))}
