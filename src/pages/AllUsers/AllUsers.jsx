@@ -4,7 +4,6 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
-import { RiAdminFill } from "react-icons/ri";
 
 
 const AllUsers = () => {

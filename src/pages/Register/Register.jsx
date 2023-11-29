@@ -9,13 +9,37 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
 
-    const { googleSignIn, createUser, updateUserProfile, githubLogin } = useContext(AuthContext); 
+    const { googleSignIn, createUser, updateUserProfile, githubLogin, user } = useContext(AuthContext); 
     const axiosPublic = useAxiosPublic();
 
     const handleGoogleLogin = () => {
         googleSignIn()
             .then(res => {
                 console.log(res);
+                const name = user.name ;
+                const email = user.email; 
+                const photo = user.photo; 
+                updateUserProfile(name, photo)
+                    .then(() => {
+                        const userInfo = {
+                            name,
+                            email, 
+                            photo
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if(res.data.insertedId){
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User created successfully.',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                }
+                                console.log(res.data)
+                            })
+                    })
                 // const user = res.data; 
             })
             .catch(error => {
