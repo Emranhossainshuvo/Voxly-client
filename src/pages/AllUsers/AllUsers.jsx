@@ -4,6 +4,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import { RiAdminFill } from "react-icons/ri";
 
 
 const AllUsers = () => {
@@ -76,6 +77,7 @@ const AllUsers = () => {
             showConfirmButton: false,
             timer: 1500
           });
+          fetchUsers();
         }
       })
   }
@@ -103,7 +105,7 @@ const AllUsers = () => {
               <td className="py-2 px-4 border">{user.name}</td>
               <td className="py-2 px-4 border">{user.email}</td>
               <td className="py-2 flex justify-around px-4 border-t">
-              { user ? 'Admin' :
+              { user.role === 'admin' ? 'Admin' :
                 <FaRegTrashAlt className='cursor-pointer' onClick={() => handleDeleteUser(user)}/>
                 }
               <MdAdminPanelSettings className='cursor-pointer' onClick={() => handleMakeAdmin(user)}></MdAdminPanelSettings>
