@@ -2,10 +2,13 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaRegTrashAlt } from "react-icons/fa";
 import { MdAdminPanelSettings } from "react-icons/md";
+import Swal from 'sweetalert2';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
+  const axiosPublic = useAxiosPublic(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +23,45 @@ const AllUsers = () => {
 
     fetchData();
   }, []);
+
+  const fetchUsers = () => {
+    axiosPublic.get('/users')
+      .then((res) => {
+        setUsers(res.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching surveys:', error);
+      });
+  };
+
+  const handleDeleteUser = (user) => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // console.log('delete button clicked')
+        axiosPublic.delete(`/users/${user._id}`)
+          .then(() => {
+            Swal.fire({
+              title: 'Deleted!',
+              text: 'User has been deleted.',
+              icon: 'success'
+            });
+            fetchUsers();
+          })
+          .catch((error) => {
+            console.error('Error deleting survey:', error);
+          });
+      }
+    });
+  };
+  
 
   return (
     <div className="container mx-auto mb-10 mt-8">
@@ -43,7 +85,7 @@ const AllUsers = () => {
               <td className="py-2 px-4 border">{user.name}</td>
               <td className="py-2 px-4 border">{user.email}</td>
               <td className="py-2 flex justify-around px-4 border-t">
-              <FaRegTrashAlt />
+              <FaRegTrashAlt onClick={() => handleDeleteUser(user)}/>
               <MdAdminPanelSettings></MdAdminPanelSettings>
               </td>
             </tr>
