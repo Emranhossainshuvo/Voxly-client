@@ -30,7 +30,7 @@ const AllUsers = () => {
         setUsers(res.data);
       })
       .catch((error) => {
-        console.error('Error fetching surveys:', error);
+        console.error(error);
       });
   };
 
@@ -63,6 +63,15 @@ const AllUsers = () => {
   };
   
 
+  const handleMakeAdmin = user => {
+      // console.log('user', user) 
+      axiosPublic.patch(`users/admin/${user._id}`) 
+      .then(res => {
+        console.log(res.data);
+      })
+  }
+
+
   return (
     <div className="container mx-auto mb-10 mt-8">
       <h1 className="text-2xl font-bold mb-4">User Table</h1>
@@ -85,8 +94,8 @@ const AllUsers = () => {
               <td className="py-2 px-4 border">{user.name}</td>
               <td className="py-2 px-4 border">{user.email}</td>
               <td className="py-2 flex justify-around px-4 border-t">
-              <FaRegTrashAlt onClick={() => handleDeleteUser(user)}/>
-              <MdAdminPanelSettings></MdAdminPanelSettings>
+              <FaRegTrashAlt className='cursor-pointer' onClick={() => handleDeleteUser(user)}/>
+              <MdAdminPanelSettings onClick={() => handleMakeAdmin(user)}></MdAdminPanelSettings>
               </td>
             </tr>
           ))}
