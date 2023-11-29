@@ -84,24 +84,19 @@ const Navbar = () => {
             <ul onClick={handleHide} className="flex space-x-4">
             
             <Link to='/addsurvey'>
-            <li>Add survey
+            <li className="hover:font-bold hover:text-normal">Add survey
             </li>
             </Link>
             <Link to="/allusers">
-            <li>
+            <li className="hover:font-bold hover:text-normal">
               Users
             </li>
             </Link>
             <Link to="/managesurveys">
-            <li>
+            <li className="hover:font-bold hover:text-normal">
               Manage Surveys
             </li>
             </Link>
-            <li>
-              <a href="#" className="text-gray-800 hover:text-blue-500">
-                Manage users
-              </a>
-            </li>
           </ul>
           
         </div>

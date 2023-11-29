@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { FaRegTrashAlt } from "react-icons/fa";
+import { MdAdminPanelSettings } from "react-icons/md";
+
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -27,6 +30,7 @@ const AllUsers = () => {
             <th className="py-2 px-4 border">Id</th>
             <th className="py-2 px-4 border">Name</th>
             <th className="py-2 px-4 border">Email</th>
+            <th className="py-2 px-4 border">Action</th>
           </tr>
           <Helmet>
             <title>Voxly | All users</title>
@@ -38,6 +42,10 @@ const AllUsers = () => {
               <td className="py-2 px-4 border">{index + 1}</td>
               <td className="py-2 px-4 border">{user.name}</td>
               <td className="py-2 px-4 border">{user.email}</td>
+              <td className="py-2 flex justify-around px-4 border-t">
+              <FaRegTrashAlt />
+              <MdAdminPanelSettings></MdAdminPanelSettings>
+              </td>
             </tr>
           ))}
         </tbody>
