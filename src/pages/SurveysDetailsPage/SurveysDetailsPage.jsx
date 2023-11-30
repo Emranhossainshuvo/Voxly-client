@@ -11,7 +11,7 @@ const SurveysDetailsPage = () => {
     const {title, description, photo} = useLoaderData(); 
 
     // useEffect( () => {
-    //     fetch('http://localhost:5000/surveys')
+    //     fetch('https://voxly-server.vercel.app/surveys')
     //     .then(res => res.json())
     //     .then(data => {
     //         console.log(data); 

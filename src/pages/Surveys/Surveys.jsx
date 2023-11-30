@@ -6,7 +6,7 @@ const SurveysPage = () => {
   const [surveys, setSurveys] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/surveys')
+    fetch('https://voxly-server.vercel.app/surveys')
       .then((res) => res.json())
       .then((data) => {
         setSurveys(data);

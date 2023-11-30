@@ -5,3 +5,8 @@ This is an Polling and Survey App with Payment Integration! This web application
 
 
 - If user click on his/her profile picture in the navbar he/she will have the access of various things like his survey histoy. Admin will have some extra feature like add or edit survey etc.
+
+
+
+- Live link for this application 
+https://voxly-8257b.web.app

@@ -55,7 +55,7 @@ import SurveysDetailsPage from "../pages/SurveysDetailsPage/SurveysDetailsPage";
             {
               path: '/surveysdetails/:id', 
               element: <SurveysDetailsPage></SurveysDetailsPage>, 
-              loader: ({params}) => fetch(`http://localhost:5000/surveys/${params.id}`)
+              loader: ({params}) => fetch(`https://voxly-server.vercel.app/surveys/${params.id}`)
             }
       ]
     },
